@@ -20,8 +20,8 @@
 // Engine.run(engine);
 
 var world;
-var width = 1280;
-var height = 960;
+var width = window.innerWidth;
+var height = window.innerHeight;
  
 var possible_coords = []
 // console.log(possible_y);
