@@ -19,7 +19,7 @@ document.onkeydown = function(event) {
 	map[e].pressed = true;
 	
     
-	console.log(map[e].held_length);
+	// console.log(map[e].held_length);
     
 }
 document.onkeyup = function(event) {
@@ -29,13 +29,17 @@ document.onkeyup = function(event) {
 
 
     var freq = getFrequency(e);
-    var release_time = Math.min(500 + map[e].held_length * 20, 3000);
-    console.log(release_time);
+    var release_time = Math.min(400 + map[e].held_length * 40, 3000);
+    // console.log(release_time);
     var tempsynth = T("saw", {freq:freq, mul:0.25});
     var env = T("perc", {r:release_time}, tempsynth).bang().play();
     // synth.def.env = env;
 
 	// synth.noteOnWithFreq(freq, 100, env);
+
+	spawnNote(world, e);
+
+	console.log(world.getBodies());
 
 	// reset variables
     map[e].pressed = false;
@@ -52,3 +56,4 @@ function getFrequency(midi_code) {
         return Number(440 / Math.pow(2, -offset_code / 12));
 	}
 }
+
