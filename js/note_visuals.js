@@ -18,7 +18,9 @@ function spawnNote(note, size, x) {
             //     {x:side_len, y:0}
 
             // ],
-            fillStyle: 'hsla(20, 37%, 57%, 0.8)',
+            styles: {
+                fillStyle: '#ffffff',
+            },
             radius: side_len,
             restitution:0.5,
     }).applyForce(Physics.vector(rand_x,-0.1)));

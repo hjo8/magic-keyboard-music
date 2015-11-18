@@ -34,7 +34,7 @@ $(document).ready(function(){
             el: "canvasid", // canvas element id
         width: width,     // canvas width
         height: height,        // canvas height
-        meta: false     // setting it to "true" will display FPS
+        meta: "true"     // setting it to "true" will display FPS
     }); 
     // adding the renderer to the world
     world.add(renderer);
@@ -53,9 +53,24 @@ $(document).ready(function(){
     world.add(gravity);
     // adding collision detection with canvas edges
     // world.add(Physics.behavior("edge-collision-detection", {
-    //     aabb: Physics.aabb(0, 0, 640, 480),
+    //     aabb: Physics.aabb(0, 0, width, 10),
     //     restitution: 0
     // }));
+    
+    //world has a floor
+    // world.add(Physics.body('convex-polygon',{
+    //         x: width/2,
+    //         y: 0,
+    //         treatment: 'static',
+    //         vertices: [
+    //             {x:0, y:0},
+    //             {x:0, y:10},
+    //             {x:width, y:10},
+    //             {x:width, y:0}
+
+    //         ]
+    // }));
+
     // bodies will react to forces such as gravity
     world.add(Physics.behavior("body-impulse-response"));
     // enabling collision detection among bodies

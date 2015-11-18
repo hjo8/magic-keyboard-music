@@ -29,9 +29,11 @@ document.onkeyup = function(event) {
     event = event || window.event;
     var e = event.keyCode;
 
+    var midi = midiDict(e, 60);
+    //didn't press a good key
+    if (!midi) return;
 
-
-    var freq = getFrequency(midiDict(e, 60));
+    var freq = getFrequency(midi);
     var release_time = Math.min(400 + map[e].held_length * 40, 3000);
     // console.log(release_time);
     var tempsynth = T("saw", {freq:freq, mul:0.25});
@@ -51,6 +53,8 @@ document.onkeyup = function(event) {
 
 
 function getFrequency(midi_code) {
+
+
     var offset_code = midi_code - 69;
     if (offset_code > 0) {
         return Number(440 * Math.pow(2, offset_code / 12));
@@ -147,7 +151,7 @@ function midiDict(keycode, offset) {
             midi += 16;
             break;
         default:
-            midi += 0;
+            return false;
             break
     }
     return midi;
