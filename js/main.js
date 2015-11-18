@@ -23,7 +23,7 @@ var world;
 var width = 1280;
 var height = 960;
  
-var possible_y = Array.apply(null, {length: height}).map(Number.call, Number);
+var possible_coords = []
 // console.log(possible_y);
 
 $(document).ready(function(){
@@ -105,9 +105,16 @@ $(document).ready(function(){
 
 
 function removeOffScreen() {
-    var bodies = world.findOne({
-            $nin: possible_y
-    });
-
-    world.removeBody(bodies);
+    // var bodies = world.findOne({
+    //         $nin: possible_y
+    // });
+    var bodies = world.getBodies();
+    for (var body of bodies) {
+        // body.recalc();
+        // console.log(body.state.pos._[1]);
+        if (body.state.pos._[1] > height){
+            world.remove(body);
+        }
+    }
+    
 }

@@ -17,6 +17,6 @@ function spawnNote(note) {
 
             ],
             restitution:0.5,
-    }).applyForce(Physics.vector(rand_x,-0.15)));
+    }).applyForce(Physics.vector(rand_x,-0.1)));
 
 }
