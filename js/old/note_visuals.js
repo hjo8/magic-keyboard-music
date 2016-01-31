@@ -1,4 +1,11 @@
 function spawnNote(note, size, midi) {
+    
+}
+
+
+/**
+
+function spawnNote(note, size, midi) {
 	var offset = $("#canvasid").offset();
 
     var x = keyDict(midi);
@@ -29,3 +36,5 @@ function spawnNote(note, size, midi) {
 
     world.add(body.applyForce(Physics.vector(rand_x,-0.1)));
 }
+
+*/

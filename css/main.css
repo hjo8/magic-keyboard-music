@@ -1,11 +1,16 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 body {
-	margin:0px;
+  margin: 0;
 }
-#canvasid{
-	background-color:black;
-}
-img{
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
