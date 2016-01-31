@@ -33,16 +33,8 @@ $(document).ready(function(){
     var renderer = Physics.renderer("canvas",{
             el: "canvasid", // canvas element id
         width: width,     // canvas width
-        height: height,        // canvas height
+        height: height        // canvas height
         // meta: "false"     // setting it to "true" will display FPS
-        styles: {
-            'circle' : {
-               strokeStyle: '#542437',
-               lineWidth: 0,
-               fillStyle: '#542437',
-               // angleIndicator: 'white'
-           }
-       }
     }); 
     // adding the renderer to the world
     world.add(renderer);

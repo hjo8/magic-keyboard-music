@@ -1,5 +1,7 @@
-function spawnNote(note, size, x) {
+function spawnNote(note, size, midi) {
 	var offset = $("#canvasid").offset();
+
+    var x = keyDict(midi);
 
 	//320 is middle width
     var px = x - offset.left;
@@ -16,12 +18,14 @@ function spawnNote(note, size, x) {
             styles: {
                 strokeStyle: '#123456',
                 lineWidth: 0,
-                fillStyle: '#542437',
+                fillStyle: '#123456',
                 angleIndicator: 'white'
             },
             radius: side_len,
             restitution:0.5,
     });
-    world.add(body.applyForce(Physics.vector(rand_x,-0.1)));
 
+    console.log(body.styles);
+
+    world.add(body.applyForce(Physics.vector(rand_x,-0.1)));
 }

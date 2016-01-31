@@ -45,7 +45,7 @@ document.onkeyup = function(event) {
 
 	// synth.noteOnWithFreq(freq, 100, env);
 
-	spawnNote(world, release_time, keyDict(midi));
+	spawnNote(world, release_time, midi);
 
 	console.log(world.getBodies());
 
